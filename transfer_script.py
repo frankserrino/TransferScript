@@ -8,23 +8,23 @@ Created on Mon Aug 22 19:51:38 2016
 import os
 from path import path
 
-DIRECTORY = '/Users/fs/BBId/img_dr'                  # source Directory
-COPY_DIRECTORY = '/Users/fs/BBId/testdir'  # Destination directory
+SOURCE_DIRECTORY = '/Users/fs/BBId/img_dr'  
+DEST_DIRECTORY = '/Users/fs/BBId/testdir'  # Destination directory
 
-d = path(DIRECTORY)
-copy_directory = path(COPY_DIRECTORY)
+d = path(SOURCE_DIRECTORY)
+dest_directory = path(DEST_DIRECTORY)
 
 def transform():
-    print "Copying Files from %s to %s" % (d, copy_directory)
+    print "Transforming files from %s to %s" % (d, dest_directory)
     file_count = 0
     for i in d.walk():
         if i.isfile() and i.endswith('jpg'):
             file_count += 1
-            print "Copying %s" % i
+            print "Transforming %s" % i
 
 # ***  between this comment and the one below is the place we place our transformation code
 
-            i.copy(copy_directory)
+            i.copy(dest_directory)
 
 # ***
 
